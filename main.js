@@ -5,6 +5,7 @@ import authMixin from './authMixin';
 function setVuetifyLocale() {
     this.$vuetify.locale.current = this.$i18n.locale;
     ////console.log("lang :", this.$i18n.locale);
+     ////console.log("lang :", this.$i18n.locale);
 }
 
 const app = createApp(App);
