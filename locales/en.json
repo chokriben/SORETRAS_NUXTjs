@@ -1,0 +1,123 @@
+{
+    "widget":{
+    "actualites":"news",
+    "evenements":"events",
+        "a_propos":"About",
+    "mission":"Our mission",
+    "objectif":"Our goals",
+    "horaires":"Schedule",
+     "interurbain":"long distance",
+          "regionaux":"Regionals"
+
+
+  },
+  "menu": {
+     "suivant":"next",
+        "voir_plus":"see more",
+    "accueil": "home",
+    "srtk": "srtk",
+    "presentation": "Presentation",
+    "recrutement": "Recrutement",
+    "qualite": "quality",
+    "securite": "security",
+    "abn_urb": "urban subscription",
+    "abn_urb_scol": "urban School Subscription",
+    "abn_urb_ord": "ordinary Urban Subscription",
+    "abn_reg": "regional Subscription",
+    "abn_reg_scol": "regional School Subscription",
+    "abn_reg_ord": "ordinary Regional Subscription",
+    "reservation": "reservation",
+    "reserv_ticket":"ticket reservation",
+    "horaire":"regional and intercity timetable",
+    "communication":"communication",
+    "acces_info":"access to information",
+    "app_offre":"tender",
+    "comm_media":"media communications",
+    "galerie":"galery",
+    "photos":"photos",
+    "videos":"videos",
+    "about":"about",
+    "actualite":"actualités",
+     "event":"events",
+    "activites":"activities",
+    "contact":"contact",
+     "parent_space": "parent space",
+    "plan":"site map",
+    "utile_link":"useful links"
+  },
+  "contact":{  "lang":"en",
+    "title": "Contact",
+    "subtitle": "Contact us",
+    "nam": "your name",
+    "phoneNumber": "Phone Number",
+    "adresse": "Address",
+    "email": "Email",
+    "emailError": "Email is not valid!",
+    "emailPlaceholder": "Email",
+    "message": "Message",
+    "acceptTerms": "You accept the Terms and Conditions of use",
+    "sendButton": "Send",
+    "clearButton": "Clear"
+},
+"actualites":{
+  "title":"News"
+},
+"recrutement":{
+  "title":"Recruitment"
+},
+
+"event":{
+"title":"Events"
+},
+"activite":{
+"title":"Activities"
+},
+"presentation":{
+"title":"Presentation"
+},
+"qualites":{
+"title":"Qualities"
+},
+"securite":{
+"title":"Securities"
+},
+"acces_info":{
+  "title":"access to information"
+},
+"urb_scol":{
+  "title":"Urban School Subscription"
+}
+,
+"urb_ord":{
+  "title":"ordinary Urban Subscription"
+},
+"reg_scol":{
+  "title":"Regional School Subscription"
+}
+,
+"reg_ord":{
+  "title":"ordinary Regional Subscription"
+},
+"horaire":{
+  "title":"timetable"
+},
+"reservation":{
+  "title":"Reservation"
+},
+"appel_offre":{
+  "title":"Tenders"
+},
+"comm_media":{
+  "title":"media communication"
+},
+"photo":{
+  "title":"Photo"
+},
+"video":{
+  "title":"Video"
+},
+"home":{
+"abn_reg":"regional Subscription",
+"abn_urb":"urban subscription"
+}
+}

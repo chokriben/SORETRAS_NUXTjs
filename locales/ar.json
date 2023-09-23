@@ -1,0 +1,121 @@
+{
+    "widget":{
+    "actualites":"أخبار",
+    "evenements":"أحداث",
+    "a_propos":"من نحن",
+    "mission":"مهمتنا",
+    "objectif":"هدفنا",
+    "horaires":"جدول مواعيد",
+    "interurbain":"مسافة طويلة",
+          "regionaux":"إقليمي"
+
+  },
+  "menu": {
+     "suivant":"التالي",
+        "voir_plus":"شاهد المزيد",
+    "accueil": "الصفحة الرئيسية",
+    "srtk": "srtk",
+    "presentation": "عرض",
+    "recrutement": "توظيف",
+    "qualite": "جودة",
+    "securite": "حماية",
+    "abn_urb": "الاشتراك الحضري",
+    "abn_urb_scol": "اشتراك المدرسة الحضرية",
+    "abn_urb_ord": "اشتراك حضري عادي",
+    "abn_reg": "اشتراك إقليمي",
+    "abn_reg_scol": "اشتراك المدرسة الإقليمية",
+    "abn_reg_ord": "اشتراك إقليمي عادي",
+    "reservation": "حجز",
+    "reserv_ticket":"حجز تذكرة",
+    "horaire":"الجدول الزمني الإقليمي وبين المدن",
+    "communication":"إتصالات",
+    "acces_info":"النفاذ الى المعلومة",
+    "app_offre":"عروض",
+    "comm_media":"الاتصالات الإعلامية",
+    "galerie":"ألبوم",
+    "photos":"صور",
+    "videos":"فيديو",
+    "about":"من نحن",
+    "actualite":"أخبار",
+    "event":"أحداث",
+    "activites":"أنشطة",
+    "contact":"اتصال",
+    "parent_space": "منطقة الولي",
+    "plan":"خريطة الموقع",
+    "utile_link":"روابط مفيدة"
+  },
+"contact":{    "lang":"ar",
+    "title": " اتصل بنا",
+    "subtitle": "اتصل بنا",
+    "nam": "الإسم واللقب",
+    "phoneNumber": "رقم الهاتف",
+    "adresse": "العنوان",
+    "email": "البريد إلكتروني",
+    "emailError": "البريد الإلكتروني غير صالح!",
+    "emailPlaceholder": "البريد إلكتروني",
+    "message": "الرسالة",
+    "acceptTerms": "قبول شروط الاستخدام",
+    "sendButton": "إرسال",
+    "clearButton": "مسح"
+},
+"actualites":{
+  "title":"أخبار"
+},
+"recrutement":{
+  "title":"توظيف"
+},
+
+"event":{
+"title":"الأحداث"
+},
+"activite":{
+"title":"النشاطات"
+},
+"presentation":{
+"title":"التقديم"
+},
+"qualites":{
+"title":"الصفات"
+},
+"securite":{
+"title":"الأمن"
+},
+"acces_info":{
+  "title":"النفاذ الى المعلومة"
+},
+"urb_scol":{
+  "title":"اشتراك المدرسة الحضرية"
+},
+"urb_ord":{
+  "title":"اشتراك حضري عادي"
+},
+"reg_scol":{
+  "title":"اشتراك إقليمي"
+},
+"reg_ord":{
+  "title":"اشتراك المدرسة الإقليمية"
+},
+"reservation":{
+  "title":"الحجز"
+},
+"horaire":{
+  "title":"الجدول الزمني"
+},
+"appel_offre":{
+  "title":"العروض"
+},
+"comm_media":{
+  "title":"وسائل الاتصال"
+},
+"photo":{
+  "title":"صور"
+},
+"video":{
+  "title":"أشرطة فيديو"
+},
+"home":{
+"abn_reg":"اشتراك إقليمي",
+"abn_urb":"الاشتراك الحضري"
+}
+}
+  

@@ -1,0 +1,301 @@
+<script setup>
+import axios from "axios";
+import { ref, onMounted } from "vue";
+
+const token =
+  typeof localStorage !== "undefined" ? localStorage.getItem("token") : null;
+
+definePageMeta({
+  layout: "admin",
+});
+const csrf_token = ref(null);
+const csrfToken = ref(null);
+const selectedGareId = ref(null);
+const garess = ref([]);
+const user = ref(null);
+const route = useRoute();
+
+const getUser = async (userId) => {
+  const axios = useNuxtApp().$axios;
+  const token = useCookie("token", {
+    watch: true,
+    httpOnly: true,
+  });
+
+  const getUserUrl = `https://api.srtk.com.tn/api/admin/user/${userId}`;
+
+  try {
+    const response = await axios.get(getUserUrl, {
+      headers: { Authorization: `Bearer ${token.value}` },
+    });
+
+    user.value = response.data; // Assuming the response contains the user object
+  } catch (error) {
+    console.error("Error retrieving user:", error);
+    // Handle the error scenario, display an error message, etc.
+  }
+};
+
+
+
+
+
+
+
+
+onMounted(async () => {
+
+  const userId = route.query.id;
+  if (userId) {
+    await getUser(userId);
+  }
+
+});
+
+const getToken = async () => {
+  try {
+    const response = await axios.get("https://api.srtk.com.tn/api/token");
+    csrfToken.value = response.data.csrf_token; // Set the csrfToken
+    headers.csrf_token = csrfToken.value; // Add the CSRF token to the headers
+    //console.log(csrfToken.value)
+  } catch (error) {
+    console.error("Error fetching CSRF token:", error);
+  }
+};
+
+
+
+
+
+//console.log(csrfToken);
+
+
+
+const name = ref("");
+const email = ref("");
+const password = ref("");
+const password_confirmation = ref("");
+
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const snackbar = ref({
+  show: false,
+  message: "",
+  color: "",
+});
+const headers = {
+  Authorization: `Bearer ${token}`,
+  "Content-Type": "multipart/form-data",
+  'CSRF-TOKEN': csrfToken.value, // Use csrfToken.value to access the ref value
+};
+
+
+const handleSubmit = async () => {
+  if (
+    !name.value ||
+    !email.value ||
+    !password.value ||
+    !password_confirmation.value
+  ) {
+    snackbar.value = {
+      show: true,
+      message: "Veuillez remplir tous les champs!",
+      color: "error",
+      position: "top",
+    };
+    return;
+  }
+  if (!emailRegex.test(email.value)) {
+    snackbar.value = {
+      show: true,
+      message: "Email is not valid!",
+      color: "error",
+      position: "top",
+    };
+    resetForm();
+    return;
+  }
+
+  if (password.value.length < 8) {
+    snackbar.value = {
+      show: true,
+      message: "le mot de passe doit contenir au moins 8 caractères",
+      color: "error",
+    };
+    resetForm();
+    return;
+  }
+
+  if (password.value !== password_confirmation.value) {
+    snackbar.value = {
+      show: true,
+      message: "les mots de passe ne correspondent pas!",
+      color: "error",
+    };
+    resetForm();
+    return;
+  }
+  try {
+    await getToken();
+    headers['csrf_token'] = csrfToken.value;
+    console.log("CSRF Token:", csrfToken.value);
+    const payload = {
+      csrf_token: csrf_token.value,
+      name: name.value,
+      email: email.value,
+      password: password.value,
+      password_confirmation: password_confirmation.value,
+      gare_id: selectedGareId.value,
+    };
+
+
+    await axios.post("https://api.srtk.com.tn/api/admin/register", payload, {
+      headers: headers,
+
+    });
+
+    snackbar.value = {
+      show: true,
+      message: "Inscription réussie!",
+      color: "success",
+    };
+
+    resetForm();
+  } catch (error) {
+    console.error(error);
+    snackbar.value = {
+      show: true,
+      message: "Échec de l'inscription!",
+      color: "error",
+    };
+  }
+};
+
+const resetForm = () => {
+  name.value = "";
+  email.value = "";
+  password.value = "";
+  password_confirmation.value = "";
+
+};
+
+// Fetch gares
+async function fetchgares() {
+  try {
+    const response = await axios.get("https://api.srtk.com.tn/api/gares");
+    return (garess.value = response.data.Gares.data);
+  } catch (error) {
+    console.error("Error fetching gares:", error);
+  }
+}
+onMounted(() => {
+  if (!token) {
+    window.location.href = '/admin/auth/login';
+  } else {
+    headers.Authorization = `Bearer ${token}`;
+    fetchgares();
+  }
+});
+
+
+</script>
+
+<template>
+  <div :class="colorMode">
+
+
+
+    <v-container>
+      <v-form @submit.prevent="handleSubmit">
+
+
+
+
+        <v-snackbar v-model="snackbar.show" :color="snackbar.color" top>
+          {{ snackbar.message }}
+        </v-snackbar>
+        <v-row>
+          <v-col cols="12" md="6">
+            <v-text-field v-model="name" label="Nom" placeholder="Nom" class="input-field"
+              prepend-inner-icon="mdi-account">
+              <template #label>
+                <span class="custom-label">Nom:</span>
+              </template>
+            </v-text-field>
+          </v-col>
+          <v-col cols="12" md="6">
+            <v-text-field v-model="email" label="Email" type="email" placeholder="Email" class="input-field"
+              prepend-inner-icon="mdi-email">
+              <template #label>
+                <span class="custom-label">Email:</span>
+              </template>
+            </v-text-field>
+          </v-col>
+          <v-col cols="12" md="6">
+            <v-text-field v-model="password" label="Mot de passe" type="password" placeholder="Mot de passe"
+              class="input-field" prepend-inner-icon="mdi-lock">
+              <template #label>
+                <span class="custom-label">Mot de passe:</span>
+              </template>
+            </v-text-field>
+          </v-col>
+          <v-col cols="12" md="6">
+            <v-text-field v-model="password_confirmation" label="Confirmer le Mot de passe" type="password"
+              placeholder="Confirmer le Mot de passe" class="input-field" prepend-inner-icon="mdi-check-circle">
+              <template #label>
+                <span class="custom-label">Confirmer le Mot de passe:</span>
+              </template>
+            </v-text-field>
+          </v-col>
+          <v-col cols="6" sm="6">
+            <select v-model="selectedGareId" class="forms" autocomplete>
+              <option value="null">Sélectionnez une région</option>
+              <option v-for="gare in garess" :key="gare.id" :value="gare.id">
+
+                {{ gare.name }}
+              </option>
+            </select>
+          </v-col>
+          <v-col cols="12">
+            <v-btn type="submit" color="green" class="me-2" rounded icon>
+              <v-icon>mdi-check</v-icon>
+            </v-btn>
+            <v-btn color="blue" type="reset" variant="tonal" rounded icon @click="resetForm">
+              <v-icon>mdi-refresh</v-icon>
+            </v-btn>
+          </v-col>
+        </v-row>
+      </v-form>
+    </v-container>
+  </div>
+</template>
+
+<style lang="scss" scoped>
+.custom-label {
+  font-weight: bold;
+  color: blue;
+  /* Add any other custom label styles you want */
+}
+
+.input-field {
+  width: 100%;
+  max-width: 400px;
+  /* Adjust the maximum width as needed */
+}
+
+.dark {
+  background-color: #333;
+  color: #fff;
+}
+
+.normal {
+  background-color: #fff;
+  color: #333;
+}
+
+@media (max-width: 600px) {
+  .input-field {
+    max-width: 100%;
+    /* Set full width on smaller screens */
+  }
+}
+</style>

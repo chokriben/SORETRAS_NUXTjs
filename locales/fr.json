@@ -1,0 +1,123 @@
+{
+  "widget":{
+    "actualites":"actualités",
+    "evenements":"événements",
+        "a_propos":"A propos",
+    "mission":"Notre mission",
+    "objectif":"Notre objectif",
+    "horaires":"Horaires",
+     "interurbain":"Interurbain",
+          "regionaux":"Régionaux"
+  },
+  "menu": {
+    "suivant":"suivant",
+    "voir_plus":"voir plus",
+    "accueil": "accueil",
+    "srtk": "srtk",
+    "presentation": "présentation",
+    "recrutement": "recrutement",
+    "qualite": "qualité",
+    "securite": "sécurité",
+    "abn_urb": "abonnement Urbain",
+    "abn_urb_scol": "abonnement Urbain Scolaire",
+    "abn_urb_ord": "abonnement Urbain Ordinaire",
+    "abn_reg": "abonnement Régional",
+    "abn_reg_scol": "abonnement Régional Scolaire",
+    "abn_reg_ord": "abonnement Régional Ordinaire",
+    "reservation": "réservation",
+    "reserv_ticket":"réservation ticket",
+    "horaire":"horaire Régionaux et interurbain",
+    "communication":"communication",
+    "acces_info":"accès à l'information",
+    "app_offre":"appel d'offre",
+    "comm_media":"communication média",
+    "galerie":"galerie",
+    "photos":"photos",
+    "videos":"videos",
+    "about":"à propos",
+    "actualite":"actualités",
+    "event":"événements",
+    "activites":"activités",
+    "contact":"contact",
+     "parent_space": "espace parent",
+    "plan":"plan du site",
+    "utile_link":"liens utiles"
+  },
+  "contact": {
+    "lang": "",
+    "title": "Contact",
+    "subtitle": "Contactez-nous",
+    "nam": "votre nom",
+    "phoneNumber": "Numéro de téléphone",
+    "adresse": "Adresse",
+    "email": "Email",
+    "emailError": "L'email n'est pas valide !",
+    "emailPlaceholder": "Email",
+    "message": "Message",
+    "acceptTerms": "Vous acceptez les Conditions Générales d'Utilisation",
+    "sendButton": "envoyer",
+    "clearButton": "effacer"
+ 
+  },
+"actualites":{
+  "title":"Actualités"
+},
+"recrutement":{
+  "title":"Récrutement"
+},
+"event":{
+"title":"Evénements"
+},
+"activite":{
+"title":"Activités"
+},
+"presentation":{
+"title":"Présentation"
+},
+"qualites":{
+"title":"Qualités"
+},
+"securite":{
+"title":"Sécurités"
+},
+"acces_info":{
+  "title":"Accès à l'information"
+},
+"urb_scol":{
+  "title":"Abonnement Urbain Scolaire"
+},
+"urb_ord":{
+  "title":"Abonnement Urbain Ordinaire"
+},
+"reg_scol":{
+  "title":"Abonnement Régional Scolaire"
+},
+"reg_ordl":{
+  "title":"Abonnement Régional Ordinaire"
+},
+"reservation":{
+  "title":"Réservation"
+},
+"horaire":{
+  "title":"Horaires"
+},
+"appel_offre":{
+  "title":"Appels d'offres"
+},
+"comm_media":{
+  "title":"communication média"
+},
+"photo":{
+  "title":"Photo"
+},
+"video":{
+  "title":"Vidéo"
+},
+
+
+"home":{
+"abn_reg":"Abonnement Régional",
+"abn_urb":"Abonnement Urbain"
+}
+
+}
